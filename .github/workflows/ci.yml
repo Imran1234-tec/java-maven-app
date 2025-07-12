@@ -1,0 +1,22 @@
+name: cicd pipeline for java maven application
+
+on: push
+
+jobs:
+    build_java_maven_app:
+        runs-on: ubuntu-latest
+        steps:
+            - name: checkout source code
+              uses: actions/checkout@v4
+
+            - name: setup jdk 11
+              uses: setup-java@v4
+              with:
+                java-version: '11'
+
+            - name: Build with maven
+              run: mvn clean install
+
+            - name: Run tests
+              run: mvn test
+
