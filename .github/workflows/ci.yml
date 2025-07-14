@@ -17,7 +17,7 @@ jobs:
 
             - name: Build with Maven
               run: mvn clean install
-              working-directory: .github\workflows\pom.xml # Adjust this if pom.xml is in a subfolder
+              working-directory: ./java-maven-app # Adjust this if pom.xml is in a subfolder
 
 
             - name: Run tests
