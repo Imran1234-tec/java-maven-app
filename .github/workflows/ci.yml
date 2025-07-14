@@ -9,10 +9,11 @@ jobs:
             - name: checkout source code
               uses: actions/checkout@v4
 
-            - name: setup jdk 11
+            - name: Set up JDK 17
               uses: actions/setup-java@v4
               with:
-                java-version: '11'
+                distribution: 'temurin'  # REQUIRED input
+                java-version: '17'       # REQUIRED input
 
             - name: Build with maven
               run: mvn clean install
